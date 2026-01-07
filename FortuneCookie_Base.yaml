@@ -1,0 +1,180 @@
+openapi: 3.0.0
+info:
+  title: Fortune Cookie API- Base version
+  version: 1.0.0
+  description: ''
+servers:
+  - url: https://api.fortune-cookie.dev
+paths:
+  /fortune:
+    get:
+      summary: Get a random fortune
+      parameters:
+        - name: theme
+          in: query
+          description: Filter fortunes by theme
+          schema:
+            type: string
+          example: work
+        - name: length
+          in: query
+          description: Length of the fortune
+          schema:
+            type: string
+          example: long
+        - name: language
+          in: query
+          description: Language code for the fortune
+          schema:
+            type: string
+          example: en
+        - name: mood
+          in: query
+          description: Mood filter
+          schema:
+            type: string
+          example: inspirational
+      responses:
+        '200':
+          description: A fortune message-English
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  fortune:
+                    type: string
+                  theme:
+                    type: string
+                  length:
+                    type: string
+                  language:
+                    type: string
+                  mood:
+                    type: string
+              example:
+                fortune: Big journeys begin with small steps.
+                theme: life
+                length: short
+                language: en
+                mood: inspirational
+        '400':
+          description: A fortune message - Bad request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+              example:
+                error: Language not supported.
+        '500':
+          description: '500'
+          content:
+            application/json:
+              schema:
+                type: object
+        default:
+          description: A fortune message - Spanish
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  fortune:
+                    type: string
+                  theme:
+                    type: string
+                  length:
+                    type: string
+                  language:
+                    type: string
+                  mood:
+                    type: string
+              example:
+                fortune: ¡No te rindas!
+                theme: life
+                length: short
+                language: es
+                mood: inspirational
+      description: >-
+        ## API Endpoint: Get Fortune
+
+
+        This endpoint retrieves a fortune based on specified criteria including
+        theme, length, language, and mood. The response will contain the fortune
+        along with the parameters used for the request.
+
+
+        ### Request
+
+
+        **Method:** GET  
+
+        **URL:** `{{baseUrl}}/fortune`
+
+
+        #### Query Parameters
+
+
+        | Parameter | Type | Description | Required |
+
+        | --- | --- | --- | --- |
+
+        | theme | string | The theme of the fortune (e.g., home) | Yes |
+
+        | length | string | The desired length of the fortune (e.g., short) |
+        Yes |
+
+        | lang | string | The language of the fortune (e.g., en) | Yes |
+
+        | mood | string | The mood associated with the fortune (e.g.,
+        inspirational) | Yes |
+
+
+        ### Response
+
+
+        The response will be in JSON format and will include the following
+        fields:
+
+
+        | Field | Type | Description |
+
+        | --- | --- | --- |
+
+        | fortune | string | The generated fortune text |
+
+        | theme | string | The theme used for the fortune request |
+
+        | length | string | The length specified for the fortune |
+
+        | language | string | The language of the fortune |
+
+        | mood | string | The mood associated with the fortune |
+
+
+        ### Example Response
+
+
+        ``` json
+
+        {
+          "fortune": "",
+          "theme": "",
+          "length": "",
+          "language": "",
+          "mood": ""
+        }
+
+         ```
+
+        ### Notes
+
+
+        - Ensure all query parameters are provided in the request to receive a
+        valid response.
+            
+        - The response will reflect the parameters used in the request, allowing
+        for easy verification of the request criteria.
