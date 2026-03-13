@@ -1,0 +1,31 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/fortune?theme=work&length=long&language=fr&mood=inspirational"
+  method: GET
+  headers:
+    Accept: application/json
+  queryParams:
+    - key: theme
+      value: work
+      description: Filter fortunes by theme
+    - key: length
+      value: long
+      description: Length of the fortune
+    - key: language
+      value: fr
+      description: Language code for the fortune
+    - key: mood
+      value: inspirational
+      description: Mood filter (added by Dev, may cause version mismatch)
+response:
+  statusCode: 400
+  statusText: Bad Request
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+        "error": "Language not supported."
+      }
+order: 2000

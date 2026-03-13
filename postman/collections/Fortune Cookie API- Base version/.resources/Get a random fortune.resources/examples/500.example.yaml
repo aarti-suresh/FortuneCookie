@@ -1,0 +1,28 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/fortune?theme=home&length=short&lang=en&mood=inspirational"
+  method: GET
+  headers:
+    Accept: application/json
+  queryParams:
+    - key: theme
+      value: home
+      description: Filter fortunes by theme
+    - key: length
+      value: short
+      description: Length of the fortune
+    - key: lang
+      value: en
+      description: Language code for the fortune
+    - key: mood
+      value: inspirational
+      description: Mood filter (added by Dev, may cause version mismatch)
+response:
+  statusCode: 500
+  statusText: Internal Server Error
+  headers:
+    Content-Type: application/json
+  body:
+    type: text
+    content: ""
+order: 4000

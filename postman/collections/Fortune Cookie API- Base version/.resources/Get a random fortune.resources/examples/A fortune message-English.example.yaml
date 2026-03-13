@@ -1,0 +1,35 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/fortune?theme=work&length=long&language=en&mood=inspirational"
+  method: GET
+  headers:
+    Accept: application/json
+  queryParams:
+    - key: theme
+      value: work
+      description: Filter fortunes by theme
+    - key: length
+      value: long
+      description: Length of the fortune
+    - key: language
+      value: en
+      description: Language code for the fortune
+    - key: mood
+      value: inspirational
+      description: Mood filter (added by Dev, may cause version mismatch)
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+        "fortune": "Big journeys begin with small steps.",
+        "theme": "life",
+        "length": "short",
+        "language": "en",
+        "mood": "inspirational" 
+      }
+order: 1000

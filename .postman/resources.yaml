@@ -1,0 +1,10 @@
+# Use this workspace to collaborate
+workspace:
+  id: c73092b6-a533-4a9e-b3fc-b6d7cc7cf6fe
+
+localResources:
+  specs:
+    - ../Base.yaml
+cloudResources:
+  collections:
+    ../postman/collections/Fortune Cookie API- Base version: 67b05989-a48f-4e9a-bf62-41217ef767f8
