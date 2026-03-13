@@ -3,12 +3,10 @@ workspace:
   id: c73092b6-a533-4a9e-b3fc-b6d7cc7cf6fe
 
 localResources:
-  specs:
-    - ../Base.yaml
+  specs: []
 
 # Each entry here maps a local resource to one or more corresponding objects in Postman Cloud
 cloudResources:
   collections:
     ../postman/collections/Fortune Cookie API- Base version: 52855131-3a26baac-39ca-4bfb-a469-82aa8fd1b654
-  specs:
-    ../Base.yaml: 0d5b12fc-d3f1-46c4-9296-244e762557ea
+  specs: {}
