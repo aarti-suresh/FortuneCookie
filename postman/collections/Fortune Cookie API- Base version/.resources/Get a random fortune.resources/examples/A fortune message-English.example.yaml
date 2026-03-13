@@ -1,6 +1,6 @@
 $kind: http-example
 request:
-  url: "{{baseUrl}}/fortune?theme=work&length=long&language=en&mood=inspirational"
+  url: "{{baseUrl}}:/fortune?theme=work&length=long&language=en&mood=inspirational"
   method: GET
   headers:
     Accept: application/json
