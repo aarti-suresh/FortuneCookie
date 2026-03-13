@@ -16,3 +16,5 @@ jobs:
         run: |
           postman login --with-api-key ${{ secrets.POSTMAN_API_KEY }}
           postman collection run 52855131-3a26baac-39ca-4bfb-a469-82aa8fd1b654 --report-events
+          postman monitor run 1f11ea9f-b8f1-42c0-80a9-1e0f5b575831 --report-events
+          
