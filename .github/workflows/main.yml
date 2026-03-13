@@ -1,0 +1,3 @@
+curl -o- "https://dl-cli.pstmn.io/install/unix.sh" | sh
+postman login --with-api-key {{postman-api-key}}
+postman collection run 52855131-3a26baac-39ca-4bfb-a469-82aa8fd1b654
